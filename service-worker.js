@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "3d8fc11c2463cb91ebb9eac82c642981"
+    "revision": "af90ac387b2ae656f7aa8c81849753f1"
   },
   {
     "url": "assets/css/styles.styles.58b7cb9e.css",
@@ -102,8 +102,8 @@ self.__precacheManifest = [
     "revision": "6229dbc5c07e16edf5b3ccd4aeceb1bb"
   },
   {
-    "url": "assets/js/app.a23839f4.js",
-    "revision": "285267ec470f559c235f5d86083ce3cb"
+    "url": "assets/js/app.4d06c09e.js",
+    "revision": "cf12186a85027e755be9bbf71025079e"
   },
   {
     "url": "assets/js/styles.58b7cb9e.js",
@@ -111,39 +111,39 @@ self.__precacheManifest = [
   },
   {
     "url": "guide/basics/context.html",
-    "revision": "8102ecf46526b8ddceba479671504067"
+    "revision": "9976a96b008c7b4bbb7126ef14381ba8"
   },
   {
     "url": "guide/basics/controllers.html",
-    "revision": "51a4cac292875e99aff2def280e63883"
+    "revision": "301c00571a845ec8b60d7c64a620354a"
   },
   {
     "url": "guide/basics/directory-structure.html",
-    "revision": "32bdd171bd451702ca1803d53b491213"
+    "revision": "19a95a4276a9be16ca44da9cd876fc3f"
   },
   {
     "url": "guide/basics/openapi-definitions.html",
-    "revision": "5a850d6c95e98e001903b2c9a22b5e8e"
+    "revision": "f3ec9228dfcb364d8254226f8c7fdd81"
   },
   {
     "url": "guide/basics/swagger-ui.html",
-    "revision": "2f4f8ba52e5ca77d6c0911beac73c505"
+    "revision": "20302bafb0897dcbfb8d7121eb822527"
   },
   {
     "url": "guide/database/mongoose.html",
-    "revision": "cda6789107497614bf2c8b00022c0288"
+    "revision": "76335f59db13f4f646e5e892b8cb2359"
   },
   {
     "url": "guide/graphql/controllers.html",
-    "revision": "5a270447b8ea9552be7c2e9f8f75a747"
+    "revision": "6737b3ca715f5bb5399d32613f98ae95"
   },
   {
     "url": "guide/graphql/getting-started.html",
-    "revision": "5e02dcad9e9d3e5de9f14e6e0c21c244"
+    "revision": "db4464a53f8c042617b38f0231b75725"
   },
   {
     "url": "guide/index.html",
-    "revision": "78e10089855d3fb2918b44b3bf3756bb"
+    "revision": "5aaebf473da61a770b52f56ec78b71a6"
   },
   {
     "url": "images/basics/swagger-ui/swagger-ui-screenshot.png",
@@ -155,7 +155,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "24effe9bcbd5b54b455496fff06eed15"
+    "revision": "e7bb3c4b9591edef56682993fcd89e3f"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
