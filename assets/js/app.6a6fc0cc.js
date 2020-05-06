@@ -811,6 +811,10 @@ const siteData = {
       {
         "text": "Guide",
         "link": "/guide/"
+      },
+      {
+        "text": "Github",
+        "link": "https://github.com/HPInc/davinci"
       }
     ],
     "sidebar": {
@@ -1144,7 +1148,7 @@ const { app, router } = Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(f
 
 window.__VUEPRESS__ = {
   version: "1.3.0",
-  hash: "113740e"
+  hash: "35da3b6"
 }
 
 router.onReady(() => {
@@ -14746,4 +14750,4 @@ module.exports = __webpack_require__(/*! /home/circleci/project/node_modules/@vu
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.7bdd6ffd.js.map
+//# sourceMappingURL=app.6a6fc0cc.js.map
