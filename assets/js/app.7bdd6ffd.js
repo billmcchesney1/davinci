@@ -1144,7 +1144,7 @@ const { app, router } = Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(f
 
 window.__VUEPRESS__ = {
   version: "1.3.0",
-  hash: "8629a64"
+  hash: "113740e"
 }
 
 router.onReady(() => {
@@ -14746,4 +14746,4 @@ module.exports = __webpack_require__(/*! /home/circleci/project/node_modules/@vu
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.654e9582.js.map
+//# sourceMappingURL=app.7bdd6ffd.js.map
