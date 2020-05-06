@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started | DaVinci</title>
+    <meta name="description" content="Declarative, Code-First, Typescript API Framework based on Express. Supports REST and GraphQL.">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/davinci/images/logo.svg">
+  <link rel="manifest" href="/davinci/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/davinci/assets/css/styles.styles.58b7cb9e.css" as="style"><link rel="preload" href="/davinci/assets/js/app.4349d6b8.js" as="script"><link rel="preload" href="/davinci/assets/js/0.003c3f10.js" as="script"><link rel="preload" href="/davinci/assets/js/6.6146b404.js" as="script"><link rel="preload" href="/davinci/assets/js/1.ec4c58d0.js" as="script"><link rel="prefetch" href="/davinci/assets/js/10.68d6cc42.js"><link rel="prefetch" href="/davinci/assets/js/11.724834be.js"><link rel="prefetch" href="/davinci/assets/js/12.1a4bb38c.js"><link rel="prefetch" href="/davinci/assets/js/13.e02add49.js"><link rel="prefetch" href="/davinci/assets/js/14.fb90f721.js"><link rel="prefetch" href="/davinci/assets/js/2.8925da02.js"><link rel="prefetch" href="/davinci/assets/js/3.5808b7df.js"><link rel="prefetch" href="/davinci/assets/js/4.dc5af875.js"><link rel="prefetch" href="/davinci/assets/js/5.7f36b3a0.js"><link rel="prefetch" href="/davinci/assets/js/7.93586b58.js"><link rel="prefetch" href="/davinci/assets/js/8.50aac85b.js"><link rel="prefetch" href="/davinci/assets/js/9.5211a8be.js">
+    <link rel="stylesheet" href="/davinci/assets/css/styles.styles.58b7cb9e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/davinci/" class="home-link router-link-active"><!----> <span class="site-name">DaVinci</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/davinci/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/davinci/guide/" class="nav-link router-link-exact-active router-link-active">
+  Guide
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/davinci/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/davinci/guide/" class="nav-link router-link-exact-active router-link-active">
+  Guide
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Basics</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/" class="active sidebar-link">Getting Started</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/davinci/guide/#installation" class="sidebar-link">Installation</a></li><li class="sidebar-sub-header"><a href="/davinci/guide/#start-shaping-the-api" class="sidebar-link">Start shaping the API</a></li></ul></li><li><a href="/davinci/guide/basics/directory-structure.html" class="sidebar-link">Directory Structure</a></li><li><a href="/davinci/guide/basics/controllers.html" class="sidebar-link">Controllers</a></li><li><a href="/davinci/guide/basics/openapi-definitions.html" class="sidebar-link">OpenAPI Definitions</a></li><li><a href="/davinci/guide/basics/swagger-ui.html" class="sidebar-link">Swagger UI</a></li><li><a href="/davinci/guide/basics/context.html" class="sidebar-link">Context</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Database</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/database/mongoose.html" class="sidebar-link">@davinci/mongoose</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>GraphQL</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/graphql/getting-started.html" class="sidebar-link">Getting Started</a></li><li><a href="/davinci/guide/graphql/controllers.html" class="sidebar-link">GraphQL Controllers</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="getting-started"><a href="#getting-started" class="header-anchor">#</a> Getting Started</h1> <h2 id="installation"><a href="#installation" class="header-anchor">#</a> Installation</h2> <p>DaVinci can be installed with either <code>npm</code> or <code>yarn</code>.</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">npm</span> i --save @davinci/core
+</code></pre></div><p>or</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> <span class="token function">add</span> @davinci/core
+</code></pre></div><br> <h2 id="start-shaping-the-api"><a href="#start-shaping-the-api" class="header-anchor">#</a> Start shaping the API</h2> <p>Implement API endpoints and handlers declaratively, using classes and decorators.</p> <h3 id="create-a-controller"><a href="#create-a-controller" class="header-anchor">#</a> Create a controller</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// file: ./CustomerController.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> context<span class="token punctuation">,</span> route <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@davinci/core'</span><span class="token punctuation">;</span>
+
+@route<span class="token punctuation">.</span><span class="token function">controller</span><span class="token punctuation">(</span><span class="token punctuation">{</span> basepath<span class="token operator">:</span> <span class="token string">'/api/customers'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CustomerController</span> <span class="token punctuation">{</span>
+	@route<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/hello'</span><span class="token punctuation">,</span> summary<span class="token operator">:</span> <span class="token string">'That is a hello method'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token function">hello</span><span class="token punctuation">(</span><span class="token parameter">@route<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> firstname<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> @<span class="token function">context</span><span class="token punctuation">(</span><span class="token punctuation">)</span> context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>firstname<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> firstname<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	@route<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/create'</span><span class="token punctuation">,</span> summary<span class="token operator">:</span> <span class="token string">'That is a create method'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token function">create</span><span class="token punctuation">(</span><span class="token parameter">@route<span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> data<span class="token operator">:</span> object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">{</span> success<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="create-the-main-file"><a href="#create-the-main-file" class="header-anchor">#</a> Create the main file</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// file: ./index.ts</span>
+<span class="token keyword">import</span> express<span class="token punctuation">,</span> <span class="token punctuation">{</span> Express <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'express'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createApp<span class="token punctuation">,</span> createRouter<span class="token punctuation">,</span> DaVinciExpress <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@davinci/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CustomerController <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./CustomerController'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> packageJson <span class="token operator">=</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'../package.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+	version<span class="token operator">:</span> packageJson<span class="token punctuation">.</span>version<span class="token punctuation">,</span>
+	openapi<span class="token operator">:</span> <span class="token punctuation">{</span>
+		docs<span class="token operator">:</span> <span class="token punctuation">{</span>
+			path<span class="token operator">:</span> <span class="token string">'/api-doc.json'</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		ui<span class="token operator">:</span> <span class="token punctuation">{</span>
+			path<span class="token operator">:</span> <span class="token string">'/explorer'</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> expressApp<span class="token operator">:</span> Express <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">createApp</span><span class="token punctuation">(</span>expressApp<span class="token punctuation">,</span> options<span class="token punctuation">,</span> <span class="token parameter">app</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">createRouter</span><span class="token punctuation">(</span>CustomerController<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">require</span><span class="token punctuation">.</span>main <span class="token operator">===</span> <span class="token keyword">module</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// this module was run directly from the command line, so we can start the server</span>
+	<span class="token punctuation">(</span>expressApp <span class="token keyword">as</span> DaVinciExpress<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> expressApp<span class="token punctuation">;</span>
+</code></pre></div><br> <h3 id="start-the-app"><a href="#start-the-app" class="header-anchor">#</a> Start the app</h3> <p>In your terminal, run:</p> <div class="language- extra-class"><pre class="language-text"><code>ts-node ./index.ts
+</code></pre></div><p>The app is now serving requests at <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">http://localhost:3000<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>Additionally, a swagger UI is served at <a href="http://localhost:3000/explorer" target="_blank" rel="noopener noreferrer">http://localhost:3000/explorer<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/22/2019, 2:26:47 PM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/davinci/guide/basics/directory-structure.html">
+        Directory Structure
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/davinci/assets/js/app.4349d6b8.js" defer></script><script src="/davinci/assets/js/0.003c3f10.js" defer></script><script src="/davinci/assets/js/6.6146b404.js" defer></script><script src="/davinci/assets/js/1.ec4c58d0.js" defer></script>
+  </body>
+</html>

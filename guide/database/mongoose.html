@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>@davinci/mongoose | DaVinci</title>
+    <meta name="description" content="Declarative, Code-First, Typescript API Framework based on Express. Supports REST and GraphQL.">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/davinci/images/logo.svg">
+  <link rel="manifest" href="/davinci/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/davinci/assets/css/styles.styles.58b7cb9e.css" as="style"><link rel="preload" href="/davinci/assets/js/app.4349d6b8.js" as="script"><link rel="preload" href="/davinci/assets/js/0.003c3f10.js" as="script"><link rel="preload" href="/davinci/assets/js/11.724834be.js" as="script"><link rel="preload" href="/davinci/assets/js/1.ec4c58d0.js" as="script"><link rel="prefetch" href="/davinci/assets/js/10.68d6cc42.js"><link rel="prefetch" href="/davinci/assets/js/12.1a4bb38c.js"><link rel="prefetch" href="/davinci/assets/js/13.e02add49.js"><link rel="prefetch" href="/davinci/assets/js/14.fb90f721.js"><link rel="prefetch" href="/davinci/assets/js/2.8925da02.js"><link rel="prefetch" href="/davinci/assets/js/3.5808b7df.js"><link rel="prefetch" href="/davinci/assets/js/4.dc5af875.js"><link rel="prefetch" href="/davinci/assets/js/5.7f36b3a0.js"><link rel="prefetch" href="/davinci/assets/js/6.6146b404.js"><link rel="prefetch" href="/davinci/assets/js/7.93586b58.js"><link rel="prefetch" href="/davinci/assets/js/8.50aac85b.js"><link rel="prefetch" href="/davinci/assets/js/9.5211a8be.js">
+    <link rel="stylesheet" href="/davinci/assets/css/styles.styles.58b7cb9e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/davinci/" class="home-link router-link-active"><!----> <span class="site-name">DaVinci</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/davinci/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/davinci/guide/" class="nav-link router-link-active">
+  Guide
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/davinci/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/davinci/guide/" class="nav-link router-link-active">
+  Guide
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Basics</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/" class="sidebar-link">Getting Started</a></li><li><a href="/davinci/guide/basics/directory-structure.html" class="sidebar-link">Directory Structure</a></li><li><a href="/davinci/guide/basics/controllers.html" class="sidebar-link">Controllers</a></li><li><a href="/davinci/guide/basics/openapi-definitions.html" class="sidebar-link">OpenAPI Definitions</a></li><li><a href="/davinci/guide/basics/swagger-ui.html" class="sidebar-link">Swagger UI</a></li><li><a href="/davinci/guide/basics/context.html" class="sidebar-link">Context</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Database</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/database/mongoose.html" class="active sidebar-link">@davinci/mongoose</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/davinci/guide/database/mongoose.html#installation" class="sidebar-link">Installation</a></li><li class="sidebar-sub-header"><a href="/davinci/guide/database/mongoose.html#define-the-schema" class="sidebar-link">Define the Schema</a></li><li class="sidebar-sub-header"><a href="/davinci/guide/database/mongoose.html#create-the-model" class="sidebar-link">Create the Model</a></li><li class="sidebar-sub-header"><a href="/davinci/guide/database/mongoose.html#hooks" class="sidebar-link">Hooks</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>GraphQL</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/graphql/getting-started.html" class="sidebar-link">Getting Started</a></li><li><a href="/davinci/guide/graphql/controllers.html" class="sidebar-link">GraphQL Controllers</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="davinci-mongoose"><a href="#davinci-mongoose" class="header-anchor">#</a> @davinci/mongoose</h1> <p>DaVinci, per se is database agnostic and doesn't have an opinion on how your API persists the data.</p> <p>However, it provides a set of utilities that allow you to use <code>MongoDB</code> in conjunction with it.</p> <p>More specifically, it provides:</p> <ul><li>Functions to generate Mongoose models starting from a decorated typescript class.</li> <li>Functions to register some <code>write/read</code> hooks.</li></ul> <h2 id="installation"><a href="#installation" class="header-anchor">#</a> Installation</h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">npm</span> i --save @davinci/mongoose
+</code></pre></div><p>or</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> <span class="token function">add</span> @davinci/mongoose
+</code></pre></div><h2 id="define-the-schema"><a href="#define-the-schema" class="header-anchor">#</a> Define the Schema</h2> <p>The schema is, once again, defined using decorators applied to methods of a class.
+It means that the same schema can be reused for different things,
+for example as mongoose and openapi schemas.</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Schema <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mongoose'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mgoose <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@davinci/mongoose'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">CustomerPhone</span> <span class="token punctuation">{</span>
+	@mgoose<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token builtin">number</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+	@mgoose<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	isPrimary<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// we can define compound indexes using the index decorator</span>
+<span class="token comment">// alternatively, they can be specified at the field level</span>
+@mgoose<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">{</span> firstname<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> lastname<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> unique<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Customer</span> <span class="token punctuation">{</span>
+	@mgoose<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token punctuation">{</span> required<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	firstname<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+	@mgoose<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token punctuation">{</span> required<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	lastname<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+	@mgoose<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token keyword">enum</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'member'</span><span class="token punctuation">,</span> <span class="token string">'admin'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	role<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+	@mgoose<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token operator">:</span> <span class="token punctuation">[</span>CustomerPhone<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	phones<span class="token operator">:</span> CustomerPhone<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+	@mgoose<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token operator">:</span> Schema<span class="token punctuation">.</span>Types<span class="token punctuation">.</span>ObjectId <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	@mgoose<span class="token punctuation">.</span><span class="token function">populate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		name<span class="token operator">:</span> <span class="token string">'account'</span><span class="token punctuation">,</span>
+		opts<span class="token operator">:</span> <span class="token punctuation">{</span> ref<span class="token operator">:</span> <span class="token string">'Account'</span><span class="token punctuation">,</span> foreignField<span class="token operator">:</span> <span class="token string">'_id'</span><span class="token punctuation">,</span> justOne<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	accountId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="create-the-model"><a href="#create-the-model" class="header-anchor">#</a> Create the Model</h2> <p>Using the <code>generateModel</code> function of the <code>@davinci/mongoose</code> package,
+we can generate a Mongoose Model by passing as argument the schema defined above.</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> mgoose <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@davinci/mongoose'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> CustomerSchema <span class="token keyword">from</span> <span class="token string">'./CustomerSchema'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> generateModel <span class="token punctuation">}</span> <span class="token operator">=</span> mgoose<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Customer <span class="token operator">=</span> generateModel<span class="token operator">&lt;</span>CustomerSchema<span class="token operator">&gt;</span><span class="token punctuation">(</span>CustomerSchema<span class="token punctuation">,</span> <span class="token string">'customer'</span><span class="token punctuation">,</span> <span class="token string">'customers'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Customer<span class="token punctuation">;</span>
+</code></pre></div><h2 id="hooks"><a href="#hooks" class="header-anchor">#</a> Hooks</h2> <p>@davinci/mongoose provides six different hooks: <code>beforeRead</code>, <code>afterRead</code>,
+<code>beforeWrite</code>, <code>afterWrite</code>, <code>beforeDelete</code> and <code>afterDelete</code>.<br>
+Under the hood, they use <a href="https://mongoosejs.com/docs/middleware.html" target="_blank" rel="noopener noreferrer">Mongoose Middlewares<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li><strong>beforeRead / afterRead</strong><br>
+It gets triggered before/after executing any find/fetch operation.
+Under the hood it register the following Mongoose Middlewares:
+<code>find</code>,
+<code>findOne</code>,
+<code>findOneAndDelete</code>,
+<code>findOneAndRemove</code>,
+<code>findOneAndUpdate</code>,
+<code>deleteMany</code>,
+<code>update</code>,
+<code>updateOne</code>,
+<code>updateMany</code></li> <li><strong>beforeWrite / afterWrite</strong><br>
+It gets triggered before/after executing any save/persist operation.
+Under the hood it register the following Mongoose Middlewares:
+<code>findOneAndUpdate</code>,
+<code>save</code>,
+<code>validate</code>,
+<code>update</code>,
+<code>updateMany</code></li> <li><strong>beforeDelete / afterDelete</strong><br>
+It gets triggered before/after executing any delete operation.
+Under the hood it register the following Mongoose Middlewares:
+<code>deleteMany</code>,
+<code>findOneAndDelete</code>,
+<code>findOneAndRemove</code></li></ul> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Document<span class="token punctuation">,</span> model <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mongoose'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mgoose <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@davinci/mongoose'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> httpErrors <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@davinci/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> CustomerSchema <span class="token keyword">from</span> <span class="token string">'./CustomerSchema'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> afterDelete <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hooks'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> generateSchema<span class="token punctuation">,</span> beforeRead<span class="token punctuation">,</span> beforeWrite<span class="token punctuation">,</span> afterDelete <span class="token punctuation">}</span> <span class="token operator">=</span> mgoose<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">generateSchema</span><span class="token punctuation">(</span>CustomerSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+beforeRead<span class="token operator">&lt;</span>Context<span class="token operator">&gt;</span><span class="token punctuation">(</span>schema<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> query<span class="token punctuation">,</span> context <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token comment">// inject accountId before persisting into DB</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>context<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">const</span> currentQuery <span class="token operator">=</span> query<span class="token punctuation">.</span><span class="token function">getQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	query<span class="token punctuation">.</span><span class="token function">setQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span>currentQuery<span class="token punctuation">,</span> accountId<span class="token operator">:</span> context<span class="token punctuation">.</span>accountId <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+beforeWrite<span class="token operator">&lt;</span>Context<span class="token punctuation">,</span> CustomerSchema<span class="token operator">&gt;</span><span class="token punctuation">(</span>schema<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> query<span class="token punctuation">,</span> doc<span class="token punctuation">,</span> context <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token comment">// inject accountId before persisting into DB</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>context<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// required check for atomic operations</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>doc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		doc<span class="token punctuation">.</span>accountId <span class="token operator">=</span> context<span class="token punctuation">.</span>accountId<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		<span class="token comment">// @ts-ignore</span>
+		query<span class="token punctuation">.</span><span class="token function">setUpdate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+			<span class="token operator">...</span>query<span class="token punctuation">.</span><span class="token function">getUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			accountId<span class="token operator">:</span> context<span class="token punctuation">.</span>accountId
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+afterDelete<span class="token operator">&lt;</span>Context<span class="token operator">&gt;</span><span class="token punctuation">(</span>schema<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> doc <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>doc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// perform some cleanup</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Customer <span class="token operator">=</span> model<span class="token operator">&lt;</span>CustomerSchema <span class="token operator">&amp;</span> Document<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">'Customer'</span><span class="token punctuation">,</span> schema<span class="token punctuation">,</span> <span class="token string">'customers'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Customer<span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/16/2020, 10:22:13 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/davinci/guide/basics/context.html" class="prev">
+        Context
+      </a></span> <span class="next"><a href="/davinci/guide/graphql/getting-started.html">
+        Getting Started
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/davinci/assets/js/app.4349d6b8.js" defer></script><script src="/davinci/assets/js/0.003c3f10.js" defer></script><script src="/davinci/assets/js/11.724834be.js" defer></script><script src="/davinci/assets/js/1.ec4c58d0.js" defer></script>
+  </body>
+</html>

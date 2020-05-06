@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Controllers | DaVinci</title>
+    <meta name="description" content="Declarative, Code-First, Typescript API Framework based on Express. Supports REST and GraphQL.">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/davinci/images/logo.svg">
+  <link rel="manifest" href="/davinci/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/davinci/assets/css/styles.styles.58b7cb9e.css" as="style"><link rel="preload" href="/davinci/assets/js/app.4349d6b8.js" as="script"><link rel="preload" href="/davinci/assets/js/0.003c3f10.js" as="script"><link rel="preload" href="/davinci/assets/js/8.50aac85b.js" as="script"><link rel="preload" href="/davinci/assets/js/1.ec4c58d0.js" as="script"><link rel="prefetch" href="/davinci/assets/js/10.68d6cc42.js"><link rel="prefetch" href="/davinci/assets/js/11.724834be.js"><link rel="prefetch" href="/davinci/assets/js/12.1a4bb38c.js"><link rel="prefetch" href="/davinci/assets/js/13.e02add49.js"><link rel="prefetch" href="/davinci/assets/js/14.fb90f721.js"><link rel="prefetch" href="/davinci/assets/js/2.8925da02.js"><link rel="prefetch" href="/davinci/assets/js/3.5808b7df.js"><link rel="prefetch" href="/davinci/assets/js/4.dc5af875.js"><link rel="prefetch" href="/davinci/assets/js/5.7f36b3a0.js"><link rel="prefetch" href="/davinci/assets/js/6.6146b404.js"><link rel="prefetch" href="/davinci/assets/js/7.93586b58.js"><link rel="prefetch" href="/davinci/assets/js/9.5211a8be.js">
+    <link rel="stylesheet" href="/davinci/assets/css/styles.styles.58b7cb9e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/davinci/" class="home-link router-link-active"><!----> <span class="site-name">DaVinci</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/davinci/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/davinci/guide/" class="nav-link router-link-active">
+  Guide
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/davinci/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/davinci/guide/" class="nav-link router-link-active">
+  Guide
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Basics</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/" class="sidebar-link">Getting Started</a></li><li><a href="/davinci/guide/basics/directory-structure.html" class="sidebar-link">Directory Structure</a></li><li><a href="/davinci/guide/basics/controllers.html" class="active sidebar-link">Controllers</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/davinci/guide/basics/controllers.html#implements-controller-methods" class="sidebar-link">Implements controller methods</a></li><li class="sidebar-sub-header"><a href="/davinci/guide/basics/controllers.html#advanced-cases-aka-use-express-primitives" class="sidebar-link">Advanced cases (AKA: use express primitives)</a></li></ul></li><li><a href="/davinci/guide/basics/openapi-definitions.html" class="sidebar-link">OpenAPI Definitions</a></li><li><a href="/davinci/guide/basics/swagger-ui.html" class="sidebar-link">Swagger UI</a></li><li><a href="/davinci/guide/basics/context.html" class="sidebar-link">Context</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Database</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/database/mongoose.html" class="sidebar-link">@davinci/mongoose</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>GraphQL</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/davinci/guide/graphql/getting-started.html" class="sidebar-link">Getting Started</a></li><li><a href="/davinci/guide/graphql/controllers.html" class="sidebar-link">GraphQL Controllers</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="controllers"><a href="#controllers" class="header-anchor">#</a> Controllers</h1> <p>A Controller is a class that implements methods that will handle incoming requests.
+It implements an application’s business logic and acts as a bridge between the HTTP/REST API and domain/database models.</p> <h2 id="implements-controller-methods"><a href="#implements-controller-methods" class="header-anchor">#</a> Implements controller methods</h2> <p>A controller method is a decorated class method that takes parameter and return a result.
+As you may notice, all the logic that deal with <code>request</code> and <code>response</code> express objects is abstracted away.</p> <p>A class is marked as controller using the <code>@route.controller()</code> decorator.</p> <p>The <code>@route.[get|post|patch|put|del|head]()</code> decorators mark a class method as a route handler.</p> <p>A route handler can accept arguments, that can be defined using the <code>@route.[path|query|body]()</code> decorators.
+The type of each argument will be inferred and inspected, and validated against the value provided.<br>
+You can even supply complex types, like <a href="">schema classes</a>.<br>
+Please note that due to a limitation on the typescript reflection mechanism, there are cases
+where you need to <a href="">pass the type explicitly</a>.</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> route <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@davinci/core'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> controller<span class="token punctuation">,</span> <span class="token keyword">get</span><span class="token punctuation">,</span> query<span class="token punctuation">,</span> post<span class="token punctuation">,</span> body <span class="token punctuation">}</span> <span class="token operator">=</span> route<span class="token punctuation">;</span>
+
+@<span class="token function">controller</span><span class="token punctuation">(</span><span class="token punctuation">{</span> basepath<span class="token operator">:</span> <span class="token string">'/api/customers'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CustomerController</span> <span class="token punctuation">{</span>
+	@<span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/hello'</span><span class="token punctuation">,</span> summary<span class="token operator">:</span> <span class="token string">'That is a hello method'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token function">findCustomer</span><span class="token punctuation">(</span><span class="token parameter">@<span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> firstname<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> firstname<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	@<span class="token function">post</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/create'</span><span class="token punctuation">,</span> summary<span class="token operator">:</span> <span class="token string">'That is a create method'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token function">create</span><span class="token punctuation">(</span><span class="token parameter">@<span class="token function">body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> data<span class="token operator">:</span> object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token punctuation">{</span> success<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> data <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="advanced-cases-aka-use-express-primitives"><a href="#advanced-cases-aka-use-express-primitives" class="header-anchor">#</a> Advanced cases (AKA: use express primitives)</h2> <p>There are some cases where you may want to have more control on how the incoming request
+will be handled.<br>
+In those cases, you can inject the Express <code>Req</code> and <code>Res</code> objects as arguments <br>
+using the <code>@express.[req|res]()</code>
+decorators.</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> route<span class="token punctuation">,</span> express <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@davinci/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Request<span class="token punctuation">,</span> Response <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'express'</span><span class="token punctuation">;</span>
+
+@route<span class="token punctuation">.</span><span class="token function">controller</span><span class="token punctuation">(</span><span class="token punctuation">{</span> basepath<span class="token operator">:</span> <span class="token string">'/api/customers'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CustomerController</span> <span class="token punctuation">{</span>
+
+	@route<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/custom-response'</span><span class="token punctuation">,</span> summary<span class="token operator">:</span> <span class="token string">'This method will redirect'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token function">customResponse</span><span class="token punctuation">(</span><span class="token parameter">@express<span class="token punctuation">.</span><span class="token function">req</span><span class="token punctuation">(</span><span class="token punctuation">)</span> req<span class="token operator">:</span> Request<span class="token punctuation">,</span> @express<span class="token punctuation">.</span><span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">)</span> res<span class="token operator">:</span> Response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> redirectUrl <span class="token operator">=</span> req<span class="token punctuation">.</span>hostname <span class="token operator">===</span> <span class="token string">'myHostname'</span> <span class="token operator">?</span> <span class="token string">'/redirect-url-1'</span> <span class="token operator">:</span> <span class="token string">'/redirect-url-2'</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span>redirectUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/13/2019, 1:36:59 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/davinci/guide/basics/directory-structure.html" class="prev">
+        Directory Structure
+      </a></span> <span class="next"><a href="/davinci/guide/basics/openapi-definitions.html">
+        OpenAPI Definitions
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/davinci/assets/js/app.4349d6b8.js" defer></script><script src="/davinci/assets/js/0.003c3f10.js" defer></script><script src="/davinci/assets/js/8.50aac85b.js" defer></script><script src="/davinci/assets/js/1.ec4c58d0.js" defer></script>
+  </body>
+</html>
