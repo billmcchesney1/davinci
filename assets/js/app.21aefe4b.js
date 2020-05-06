@@ -408,14 +408,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   "v-76bd1ed8": () => __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./docs/README.md */ "./docs/README.md")),
   "v-988e000c": () => __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./docs/guide/README.md */ "./docs/guide/README.md")),
+  "v-6ffafe83": () => __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/context.md */ "./docs/guide/basics/context.md")),
   "v-7831c59a": () => __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/controllers.md */ "./docs/guide/basics/controllers.md")),
   "v-4ad616bb": () => __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/directory-structure.md */ "./docs/guide/basics/directory-structure.md")),
-  "v-6ffafe83": () => __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/context.md */ "./docs/guide/basics/context.md")),
-  "v-6d7ce972": () => __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/swagger-ui.md */ "./docs/guide/basics/swagger-ui.md")),
   "v-3ba6515b": () => __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/openapi-definitions.md */ "./docs/guide/basics/openapi-definitions.md")),
+  "v-6d7ce972": () => __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/swagger-ui.md */ "./docs/guide/basics/swagger-ui.md")),
+  "v-136c9927": () => __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./docs/guide/graphql/getting-started.md */ "./docs/guide/graphql/getting-started.md")),
   "v-ed006172": () => __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./docs/guide/database/mongoose.md */ "./docs/guide/database/mongoose.md")),
-  "v-43676547": () => __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./docs/guide/graphql/controllers.md */ "./docs/guide/graphql/controllers.md")),
-  "v-136c9927": () => __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./docs/guide/graphql/getting-started.md */ "./docs/guide/graphql/getting-started.md")) 
+  "v-43676547": () => __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./docs/guide/graphql/controllers.md */ "./docs/guide/graphql/controllers.md")) 
 });
 
 /***/ }),
@@ -495,6 +495,14 @@ const routes = [
     redirect: "/guide/"
   },
   {
+    name: "v-6ffafe83",
+    path: "/guide/basics/context.html",
+    component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-6ffafe83").then(next)
+    },
+  },
+  {
     name: "v-7831c59a",
     path: "/guide/basics/controllers.html",
     component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -511,11 +519,11 @@ const routes = [
     },
   },
   {
-    name: "v-6ffafe83",
-    path: "/guide/basics/context.html",
+    name: "v-3ba6515b",
+    path: "/guide/basics/openapi-definitions.html",
     component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-6ffafe83").then(next)
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-3ba6515b").then(next)
     },
   },
   {
@@ -527,11 +535,11 @@ const routes = [
     },
   },
   {
-    name: "v-3ba6515b",
-    path: "/guide/basics/openapi-definitions.html",
+    name: "v-136c9927",
+    path: "/guide/graphql/getting-started.html",
     component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-3ba6515b").then(next)
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-136c9927").then(next)
     },
   },
   {
@@ -548,14 +556,6 @@ const routes = [
     component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-43676547").then(next)
-    },
-  },
-  {
-    name: "v-136c9927",
-    path: "/guide/graphql/getting-started.html",
-    component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-136c9927").then(next)
     },
   },
   {
@@ -650,6 +650,27 @@ const siteData = {
       "lastUpdated": "11/22/2019, 2:26:47 PM"
     },
     {
+      "title": "Context",
+      "frontmatter": {},
+      "regularPath": "/guide/basics/context.html",
+      "relativePath": "guide/basics/context.md",
+      "key": "v-6ffafe83",
+      "path": "/guide/basics/context.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "What is Context?",
+          "slug": "what-is-context"
+        },
+        {
+          "level": 2,
+          "title": "Define context",
+          "slug": "define-context"
+        }
+      ],
+      "lastUpdated": "11/13/2019, 3:44:46 PM"
+    },
+    {
       "title": "Controllers",
       "frontmatter": {},
       "regularPath": "/guide/basics/controllers.html",
@@ -680,43 +701,6 @@ const siteData = {
       "lastUpdated": "11/14/2019, 9:10:13 AM"
     },
     {
-      "title": "Context",
-      "frontmatter": {},
-      "regularPath": "/guide/basics/context.html",
-      "relativePath": "guide/basics/context.md",
-      "key": "v-6ffafe83",
-      "path": "/guide/basics/context.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "What is Context?",
-          "slug": "what-is-context"
-        },
-        {
-          "level": 2,
-          "title": "Define context",
-          "slug": "define-context"
-        }
-      ],
-      "lastUpdated": "11/13/2019, 3:44:46 PM"
-    },
-    {
-      "title": "Swagger UI",
-      "frontmatter": {},
-      "regularPath": "/guide/basics/swagger-ui.html",
-      "relativePath": "guide/basics/swagger-ui.md",
-      "key": "v-6d7ce972",
-      "path": "/guide/basics/swagger-ui.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "Enable Swagger UI",
-          "slug": "enable-swagger-ui"
-        }
-      ],
-      "lastUpdated": "11/14/2019, 9:26:09 AM"
-    },
-    {
       "title": "OpenAPI Definitions",
       "frontmatter": {},
       "regularPath": "/guide/basics/openapi-definitions.html",
@@ -736,6 +720,58 @@ const siteData = {
         }
       ],
       "lastUpdated": "11/13/2019, 1:36:59 PM"
+    },
+    {
+      "title": "Swagger UI",
+      "frontmatter": {},
+      "regularPath": "/guide/basics/swagger-ui.html",
+      "relativePath": "guide/basics/swagger-ui.md",
+      "key": "v-6d7ce972",
+      "path": "/guide/basics/swagger-ui.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "Enable Swagger UI",
+          "slug": "enable-swagger-ui"
+        }
+      ],
+      "lastUpdated": "11/14/2019, 9:26:09 AM"
+    },
+    {
+      "title": "Getting Started",
+      "frontmatter": {},
+      "regularPath": "/guide/graphql/getting-started.html",
+      "relativePath": "guide/graphql/getting-started.md",
+      "key": "v-136c9927",
+      "path": "/guide/graphql/getting-started.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "Installation",
+          "slug": "installation"
+        },
+        {
+          "level": 2,
+          "title": "Start shaping the GraphQL API",
+          "slug": "start-shaping-the-graphql-api"
+        },
+        {
+          "level": 3,
+          "title": "Create a controller",
+          "slug": "create-a-controller"
+        },
+        {
+          "level": 3,
+          "title": "Create the main file",
+          "slug": "create-the-main-file"
+        },
+        {
+          "level": 3,
+          "title": "Start the app",
+          "slug": "start-the-app"
+        }
+      ],
+      "lastUpdated": "11/22/2019, 2:26:47 PM"
     },
     {
       "title": "@davinci/mongoose",
@@ -783,42 +819,6 @@ const siteData = {
         }
       ],
       "lastUpdated": "11/14/2019, 2:59:20 PM"
-    },
-    {
-      "title": "Getting Started",
-      "frontmatter": {},
-      "regularPath": "/guide/graphql/getting-started.html",
-      "relativePath": "guide/graphql/getting-started.md",
-      "key": "v-136c9927",
-      "path": "/guide/graphql/getting-started.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "Installation",
-          "slug": "installation"
-        },
-        {
-          "level": 2,
-          "title": "Start shaping the GraphQL API",
-          "slug": "start-shaping-the-graphql-api"
-        },
-        {
-          "level": 3,
-          "title": "Create a controller",
-          "slug": "create-a-controller"
-        },
-        {
-          "level": 3,
-          "title": "Create the main file",
-          "slug": "create-the-main-file"
-        },
-        {
-          "level": 3,
-          "title": "Start the app",
-          "slug": "start-the-app"
-        }
-      ],
-      "lastUpdated": "11/22/2019, 2:26:47 PM"
     }
   ],
   "themeConfig": {
@@ -1163,7 +1163,7 @@ const { app, router } = Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(f
 
 window.__VUEPRESS__ = {
   version: "1.3.0",
-  hash: "7b8df5f"
+  hash: "89c0655"
 }
 
 router.onReady(() => {
@@ -14785,4 +14785,4 @@ module.exports = __webpack_require__(/*! /home/circleci/project/node_modules/@vu
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.19bf4bbb.js.map
+//# sourceMappingURL=app.21aefe4b.js.map
