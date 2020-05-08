@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "assets/js/" + ({}[chunkId]||chunkId) + "." + {"0":"003c3f10","1":"ec4c58d0","2":"8925da02","3":"5808b7df","4":"dc5af875","5":"7f36b3a0","6":"6146b404","7":"93586b58","8":"50aac85b","9":"5211a8be","10":"68d6cc42","11":"724834be","12":"1a4bb38c","13":"e02add49","14":"fb90f721"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "assets/js/" + ({}[chunkId]||chunkId) + "." + {"0":"003c3f10","1":"ec4c58d0","2":"8925da02","3":"5808b7df","4":"dc5af875","5":"7f36b3a0","6":"6146b404","7":"93586b58","8":"50aac85b","9":"5211a8be","10":"68d6cc42","11":"724834be","12":"847ea70b","13":"235d87b0","14":"fb90f721"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -393,8 +393,8 @@ __webpack_require__.r(__webpack_exports__);
   "v-7831c59a": () => __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/controllers.md */ "./docs/guide/basics/controllers.md")),
   "v-4ad616bb": () => __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/directory-structure.md */ "./docs/guide/basics/directory-structure.md")),
   "v-3ba6515b": () => __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/openapi-definitions.md */ "./docs/guide/basics/openapi-definitions.md")),
-  "v-6d7ce972": () => __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/swagger-ui.md */ "./docs/guide/basics/swagger-ui.md")),
   "v-ed006172": () => __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./docs/guide/database/mongoose.md */ "./docs/guide/database/mongoose.md")),
+  "v-6d7ce972": () => __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./docs/guide/basics/swagger-ui.md */ "./docs/guide/basics/swagger-ui.md")),
   "v-43676547": () => __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./docs/guide/graphql/controllers.md */ "./docs/guide/graphql/controllers.md")),
   "v-136c9927": () => __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./docs/guide/graphql/getting-started.md */ "./docs/guide/graphql/getting-started.md")) 
 });
@@ -508,19 +508,19 @@ const routes = [
     },
   },
   {
-    name: "v-6d7ce972",
-    path: "/guide/basics/swagger-ui.html",
-    component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-6d7ce972").then(next)
-    },
-  },
-  {
     name: "v-ed006172",
     path: "/guide/database/mongoose.html",
     component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-ed006172").then(next)
+    },
+  },
+  {
+    name: "v-6d7ce972",
+    path: "/guide/basics/swagger-ui.html",
+    component: _home_circleci_project_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-6d7ce972").then(next)
     },
   },
   {
@@ -703,22 +703,6 @@ const siteData = {
       "lastUpdated": "11/13/2019, 1:36:59 PM"
     },
     {
-      "title": "Swagger UI",
-      "frontmatter": {},
-      "regularPath": "/guide/basics/swagger-ui.html",
-      "relativePath": "guide/basics/swagger-ui.md",
-      "key": "v-6d7ce972",
-      "path": "/guide/basics/swagger-ui.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "Enable Swagger UI",
-          "slug": "enable-swagger-ui"
-        }
-      ],
-      "lastUpdated": "11/14/2019, 9:26:09 AM"
-    },
-    {
       "title": "@davinci/mongoose",
       "frontmatter": {},
       "regularPath": "/guide/database/mongoose.html",
@@ -750,6 +734,22 @@ const siteData = {
       "lastUpdated": "4/16/2020, 10:22:13 AM"
     },
     {
+      "title": "Swagger UI",
+      "frontmatter": {},
+      "regularPath": "/guide/basics/swagger-ui.html",
+      "relativePath": "guide/basics/swagger-ui.md",
+      "key": "v-6d7ce972",
+      "path": "/guide/basics/swagger-ui.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "Enable Swagger UI",
+          "slug": "enable-swagger-ui"
+        }
+      ],
+      "lastUpdated": "11/14/2019, 9:26:09 AM"
+    },
+    {
       "title": "GraphQL Controllers",
       "frontmatter": {},
       "regularPath": "/guide/graphql/controllers.html",
@@ -763,7 +763,7 @@ const siteData = {
           "slug": "implements-graphql-controller-methods"
         }
       ],
-      "lastUpdated": "11/14/2019, 2:59:20 PM"
+      "lastUpdated": "5/8/2020, 5:11:59 PM"
     },
     {
       "title": "Getting Started",
@@ -799,7 +799,7 @@ const siteData = {
           "slug": "start-the-app"
         }
       ],
-      "lastUpdated": "11/22/2019, 2:26:47 PM"
+      "lastUpdated": "5/8/2020, 5:11:59 PM"
     }
   ],
   "themeConfig": {
@@ -1148,7 +1148,7 @@ const { app, router } = Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(f
 
 window.__VUEPRESS__ = {
   version: "1.3.0",
-  hash: "35da3b6"
+  hash: "a10181d"
 }
 
 router.onReady(() => {
@@ -14750,4 +14750,4 @@ module.exports = __webpack_require__(/*! /home/circleci/project/node_modules/@vu
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.6a6fc0cc.js.map
+//# sourceMappingURL=app.7b6efce9.js.map
