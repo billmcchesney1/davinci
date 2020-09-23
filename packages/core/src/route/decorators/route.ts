@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import _ from 'lodash';
+import _findIndex from 'lodash.findindex';
 import { Reflector } from '@davinci/reflector';
 import { IMethodParameter, IMethodParameterBase, IMethodDecoratorOptions, IMethodDecoratorMetadata } from '../types';
 
@@ -26,8 +26,8 @@ export const createRouteMethodDecorator = verb =>
 				validation,
 				handler: prototype[methodName]
 			};
-			let methodIndex = _.findIndex(methods, { methodName });
-			methodIndex = methodIndex > -1 ? methodIndex : _.findIndex(methods, { path, verb });
+			let methodIndex = _findIndex(methods, { methodName });
+			methodIndex = methodIndex > -1 ? methodIndex : _findIndex(methods, { path, verb });
 			if (methodIndex && methodIndex > -1) {
 				methods.splice(methodIndex, 1);
 			}
@@ -69,7 +69,7 @@ export function param(options: IMethodParameter): Function {
 			type
 		};
 
-		const methodParameterIndex = _.findIndex(methodParameters, { methodName, index });
+		const methodParameterIndex = _findIndex(methodParameters, { methodName, index });
 		if (methodParameterIndex > -1) {
 			methodParameters[methodParameterIndex] = meta;
 		} else {

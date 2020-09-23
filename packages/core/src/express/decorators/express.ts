@@ -4,7 +4,7 @@
  */
 
 import { Reflector } from '@davinci/reflector';
-import _ from 'lodash';
+import _find from 'lodash.find';
 import { IHeaderDecoratorMetadata } from '../types';
 
 /**
@@ -19,7 +19,7 @@ export const createReqResExpressDecorator = (reqOrRes: 'req' | 'res') => () => (
 	// get the existing metadata props
 	const methodParameters =
 		Reflector.getMetadata('davinci:openapi:method-parameters', prototype.constructor) || [];
-	const isAlreadySet = !!_.find(methodParameters, { methodName, index });
+	const isAlreadySet = !!_find(methodParameters, { methodName, index });
 	if (isAlreadySet) return;
 
 	methodParameters.unshift({

@@ -19,17 +19,32 @@
 		"ajv": "6.2.1",
 		"bluebird": "3.5.0",
 		"debug": "^4.1.1",
-		"lodash": "4.17.19",
-		"require-dir": "0.3.2",
-		"swagger-ui-express": "^4.0.7"
+		"lodash.clone": "4.5.0",
+		"lodash.endswith": "4.2.1",
+		"lodash.filter": "4.6.0",
+		"lodash.find": "4.6.0",
+		"lodash.findindex": "4.6.0",
+		"lodash.findkey": "4.6.0",
+		"lodash.flow": "3.5.0",
+		"lodash.foreach": "4.5.0",
+		"lodash.get": "4.4.2",
+		"lodash.map": "4.6.0",
+		"lodash.reduce": "4.6.0",
+		"lodash.startswith": "4.2.1",
+		"lodash.values": "4.3.0",
+		"require-dir": "0.3.2"
 	},
 	"peerDependencies": {
-		"express": "^4.16.4",
-		"mongoose": "5.5.5"
+		"express": "^4.16.4"
+	},
+	"optionalDependencies": {
+		"swagger-ui-express": "^4.0.7"
 	},
 	"devDependencies": {
+		"@godaddy/terminus": "4.1.0",
 		"@types/mocha": "^5.2.7",
 		"express": "^4.16.4",
+		"swagger-ui-express": "^4.0.7",
 		"tslib": "^1.9.3",
 		"typescript": "^3.7.5"
 	}

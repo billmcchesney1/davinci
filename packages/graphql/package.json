@@ -11,7 +11,7 @@
 		"test": "mocha --exit",
 		"cover": "nyc npm test"
 	},
-	"author": "Oneflow Systems (http://www.oneflowsystems.com/)",
+	"author": "HP",
 	"license": "ISC",
 	"dependencies": {
 		"@davinci/core": "^0.19.4",
@@ -21,7 +21,18 @@
 		"express-graphql": "0.11.0",
 		"graphql": "14.4.2",
 		"graphql-iso-date": "3.6.1",
-		"lodash": "4.17.19"
+		"lodash": "4.17.19",
+		"lodash.camelcase": "4.3.0",
+		"lodash.capitalize": "4.2.1",
+		"lodash.compact": "3.0.1",
+		"lodash.filter": "4.6.0",
+		"lodash.foreach": "4.5.0",
+		"lodash.map": "4.6.0",
+		"lodash.mapvalues": "4.6.0",
+		"lodash.merge": "4.6.2",
+		"lodash.reduce": "4.6.0",
+		"lodash.trim": "4.5.1",
+		"lodash.upperfirst": "4.3.1"
 	},
 	"devDependencies": {
 		"@types/graphql": "14.5.0",

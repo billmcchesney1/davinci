@@ -4,7 +4,13 @@
  */
 
 // eslint-disable-next-line max-classes-per-file
-import _ from 'lodash';
+
+import _camelCase from 'lodash.camelcase'
+import _reduce from 'lodash.reduce'
+import _compact from 'lodash.compact'
+import _upperFirst from 'lodash.upperfirst'
+import _map from 'lodash.map'
+import _upperFirst from 'lodash.upperfirst'
 import { Reflector, ClassType } from '@davinci/reflector';
 import { field } from './decorators';
 import { IFieldDecoratorMetadata } from './types';
@@ -13,7 +19,7 @@ const OPERATORS = ['EQ', 'NE', 'GT', 'GTE', 'LT', 'LTE', 'IN', 'NIN', 'EXISTS', 
 const LOGIC_OPERATORS = ['AND', 'OR', 'NOR'];
 
 const convertToMongodbOperator = (op: typeof OPERATORS[number] | typeof LOGIC_OPERATORS[number]) =>
-	`$${_.camelCase(op)}`;
+	`$${_camelCase(op)}`;
 
 /**
  * Parse a GQL query into a Mongodb compatible query
@@ -21,7 +27,7 @@ const convertToMongodbOperator = (op: typeof OPERATORS[number] | typeof LOGIC_OP
  * @param path
  */
 export const toMongodbQuery = (query, path = '') => {
-	return _.reduce(
+	return _reduce(
 		query,
 		(acc, value, key) => {
 			if (OPERATORS.includes(key)) {
@@ -41,7 +47,7 @@ export const toMongodbQuery = (query, path = '') => {
 			}
 
 			if (typeof value === 'object') {
-				return { ...acc, ...toMongodbQuery(value, _.compact([path, key]).join('.')) };
+				return { ...acc, ...toMongodbQuery(value, _compact([path, key]).join('.')) };
 			}
 
 			acc[key] = value;
@@ -94,7 +100,7 @@ const createFieldFilterOperatorsClass = (type, name: string) => {
 			NOT: any;
 		}
 
-		const newName = _.upperFirst(`${name}Filter`);
+		const newName = _upperFirst(`${name}Filter`);
 		renameClass(BaseFilterOperators, newName);
 
 		return BaseFilterOperators;
@@ -105,7 +111,7 @@ const createFieldFilterOperatorsClass = (type, name: string) => {
 	}
 
 	if (typeof type === 'function') {
-		const fieldsMetadata = _.map(
+		const fieldsMetadata = _map(
 			Reflector.getMetadata<IFieldDecoratorMetadata[]>('davinci:graphql:fields', type),
 			({ key, opts, optsFactory }) => {
 				const options = opts ?? optsFactory({ isInput: false, operationType: 'query' });
@@ -122,7 +128,7 @@ const createFieldFilterOperatorsClass = (type, name: string) => {
 			const { description, asInput } = opts;
 			field({ description, asInput, required: false, type: newType })(QueryClass.prototype, key);
 		});
-		const newName = _.upperFirst(`${name}Filter`);
+		const newName = _upperFirst(`${name}Filter`);
 		renameClass(QueryClass, newName);
 
 		LOGIC_OPERATORS.forEach(op => field({ typeFactory: () => [QueryClass] })(QueryClass.prototype, op));

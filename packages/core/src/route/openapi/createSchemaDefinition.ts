@@ -72,7 +72,7 @@ export const getSchemaDefinition = (theClass: Function, definitions = {}): ISwag
 				let type =
 					typeof opts?.type === 'undefined'
 						? Reflector.getMetadata('design:type', typeOrClass.prototype, k)
-						: opts.type;
+						: opts?.type;
 
 				if (opts && typeof opts.typeFactory === 'function') {
 					type = opts.typeFactory();

@@ -4,7 +4,11 @@
  */
 
 import Debug from 'debug';
-import _ from 'lodash';
+import _mapValues from 'lodash.mapvalues'
+import _filter from 'lodash.filter'
+import _merge from 'lodash.merge'
+import _forEach from 'lodash.foreach'
+import _trim from 'lodash.trim'
 import Resource from './Resource';
 
 const debug = new Debug('davinci:openapi');
@@ -25,10 +29,10 @@ export const sanitiseResourcePath = resourcePaths => {
 	const EXCLUDED_PARAMETER_TYPES = ['res', 'req', 'context'];
 
 	// remove non-standard parameters
-	return _.mapValues(resourcePaths, path => {
+	return _mapValues(resourcePaths, path => {
 		return {
 			...path,
-			parameters: _.filter(
+			parameters: _filter(
 				path.parameters,
 				parameter => !EXCLUDED_PARAMETER_TYPES.includes(parameter.schema.type)
 			)
@@ -37,7 +41,7 @@ export const sanitiseResourcePath = resourcePaths => {
 };
 
 export const generateFullSwagger = opts => {
-	const fullSwagger = _.merge({}, opts, {
+	const fullSwagger = _merge({}, opts, {
 		swagger: SWAGGER_VERSION,
 		paths: {},
 		definitions: {},
@@ -46,19 +50,19 @@ export const generateFullSwagger = opts => {
 
 	resources.forEach(resource => {
 		// add definitions
-		_.each(resource.definitions, (resourceDefinition, defName) => {
+		_forEach(resource.definitions, (resourceDefinition, defName) => {
 			fullSwagger.definitions[defName] = resourceDefinition;
 		});
 
 		// TODO is this actually used, it is not part of the openAPI specification
 		// add parameters
-		_.each(resource.parameters, (resourceParameter, paramName) => {
+		_forEach(resource.parameters, (resourceParameter, paramName) => {
 			fullSwagger.parameters[paramName] = resourceParameter;
 		});
 
 		// add paths
-		_.each(resource.paths, (resourcePath, pathName) => {
-			const trimmedBasePath = _.trim(resource.basePath, '/');
+		_forEach(resource.paths, (resourcePath, pathName) => {
+			const trimmedBasePath = _trim(resource.basePath, '/');
 			let fullPath = `/${trimmedBasePath}${pathName}`;
 			if (pathName === '/') fullPath = `/${trimmedBasePath}`;
 			fullSwagger.paths[fullPath] = sanitiseResourcePath(resourcePath);

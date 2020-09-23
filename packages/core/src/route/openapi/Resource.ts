@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-import _ from 'lodash';
+import _foreach from 'lodash.foreach';
+import _capitalize from 'lodash.capitalize';
 import { ISwaggerDefinitions, PathsDefinition } from '../types';
 
 class Resource {
@@ -24,8 +25,8 @@ class Resource {
 		this.parameters = doc.parameters;
 		this.basePath = basePath || this.resourceName;
 
-		_.each(this.paths, path => {
-			_.each(path, operation => {
+		_foreach_(this.paths, path => {
+			_foreach(path, operation => {
 				if (!operation.consumes || operation.consumes.length === 0) {
 					operation.consumes = ['application/json'];
 				}
@@ -36,7 +37,7 @@ class Resource {
 
 				// tags
 				if (!operation.tags || operation.tags.length === 0) {
-					operation.tags = [_.capitalize(this.resourceName)];
+					operation.tags = [_capitalize(this.resourceName)];
 				}
 				// operations
 				if (!operation.responses) operation.responses = {};

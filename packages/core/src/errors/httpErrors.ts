@@ -4,7 +4,7 @@
  */
 
 // eslint-disable-next-line max-classes-per-file
-import _ from 'lodash';
+import _clone from 'lodash.clone';
 
 export class HttpError extends Error {
 	// https://github.com/Microsoft/TypeScript/issues/13965
@@ -45,7 +45,7 @@ export class HttpError extends Error {
 		this.statusCode = code;
 		this.className = className;
 
-		const clonedData: any = _.clone(data);
+		const clonedData: any = _clone(data);
 		this.data = clonedData;
 		if (clonedData.errors) {
 			this.errors = clonedData.errors;

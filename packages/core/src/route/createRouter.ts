@@ -6,8 +6,15 @@
 import Ajv from 'ajv';
 import Debug from 'debug';
 import express, { NextFunction, Response, Router } from 'express';
-import _ from 'lodash';
-import _fp from 'lodash/fp';
+import _reduce from 'lodash.reduce';
+import _forEach from 'lodash.foreach';
+import _startsWith from 'lodash.startswith';
+import _endsWith from 'lodash.endswith';
+import _findKey from 'lodash.findkey';
+import _filter from 'lodash.filter';
+import _map from 'lodash.map';
+import _get from 'lodash.get';
+import _flow from 'lodash.flow';
 import Promise from 'bluebird';
 import path from 'path';
 import { ClassType, Reflector } from '@davinci/reflector';
@@ -28,7 +35,7 @@ const transformDefinitionToValidAJVSchemas = (schema, validationOptions: MethodV
 	}
 
 	if (typeof schema === 'object') {
-		return _.reduce(
+		return _reduce(
 			schema,
 			(acc, value, key) => {
 				if (key === 'required' && validationOptions && validationOptions.partial) {
@@ -76,7 +83,7 @@ const performAjvValidation = ({ value, config: cfg, definitions, validationOptio
 	};
 	const data = { [config.name]: value };
 
-	_.forEach(definitions, (theSchema, name) => {
+	_forEach(definitions, (theSchema, name) => {
 		const parsedSchema = transformDefinitionToValidAJVSchemas(theSchema, validationOptions);
 		ajv.addSchema(parsedSchema, name);
 	});
@@ -91,7 +98,7 @@ const performAjvValidation = ({ value, config: cfg, definitions, validationOptio
 };
 
 const attemptJsonParsing = ({ value, config, definitions, validationOptions }: ProcessMethodParameters) => {
-	if (_.startsWith(value, '{') && _.endsWith(value, '}')) {
+	if (_startsWith(value, '{') && _endsWith(value, '}')) {
 		try {
 			return {
 				value: JSON.parse(value),
@@ -127,10 +134,10 @@ const validateAndCoerce = ({ value, config, definitions, validationOptions }: Pr
 };
 
 const processParameter = ({ value, config, definitions, validationOptions }: ProcessMethodParameters) =>
-	_fp.flow(
+	_flow(
 		attemptJsonParsing,
 		validateAndCoerce,
-		_fp.get('value')
+		par => _get(par, 'value')
 	)({
 		value,
 		config,
@@ -209,7 +216,7 @@ const makeHandlerFunction = (
 	contextFactory: ContextFactory
 ) => {
 	// @ts-ignore-next-line
-	const successCode = _.findKey(operation.responses, (obj, key) => +key >= 200 && +key < 400);
+	const successCode = _findKey(operation.responses, (obj, key) => +key >= 200 && +key < 400);
 
 	// get middlewares
 	const allMiddlewaresMeta = (
@@ -224,12 +231,12 @@ const makeHandlerFunction = (
 		'davinci:express:method-response-header',
 		controller.constructor.prototype
 	);
-	const methodResponseHeadersMeta = _.filter<IHeaderDecoratorMetadata>(responseHeadersMeta, {
+	const methodResponseHeadersMeta = _filter<IHeaderDecoratorMetadata>(responseHeadersMeta, {
 		handler: controller[functionName]
 	});
 
 	return [
-		..._.map(beforeMiddlewares, ({ middlewareFunction }) => wrapMiddleware(middlewareFunction)),
+		..._map(beforeMiddlewares, ({ middlewareFunction }) => wrapMiddleware(middlewareFunction)),
 		(req, res, next) => {
 			if (req.requestHandled) return next();
 			const parameterList = mapReqToParameters(
@@ -257,7 +264,7 @@ const makeHandlerFunction = (
 				err => next(err)
 			);
 		},
-		..._.map(afterMiddlewares, ({ middlewareFunction }) => wrapMiddleware(middlewareFunction)),
+		..._map(afterMiddlewares, ({ middlewareFunction }) => wrapMiddleware(middlewareFunction)),
 		// tslint:disable-next-line:variable-name
 		(req, _res, next) => {
 			req.requestHandled = true;
@@ -276,7 +283,7 @@ export const createRouteHandlers = (
 	const methods = Reflector.getMetadata('davinci:openapi:methods', controller.constructor) || [];
 
 	// for each path
-	_.each(methods, method => {
+	_forEach(methods, method => {
 		const operation =
 			definition.paths[method.path] && definition.paths[method.path][method.verb]
 				? definition.paths[method.path][method.verb]
@@ -294,7 +301,7 @@ export const createRouteHandlers = (
 			controller,
 			method.methodName,
 			definition.definitions,
-			_.get(validationOptions, `[${method.path}][${method.verb}]`, {}) as MethodValidation,
+			_get(validationOptions, `[${method.path}][${method.verb}]`, {}) as MethodValidation,
 			contextFactory
 		);
 		routeHandlers.push({ method: method.verb, path: thePath, handlers });
@@ -330,7 +337,7 @@ const createRouterAndSwaggerDoc = (
 
 	// create the swagger structure
 	const mainDefinition = resourceSchema ? createSchemaDefinition(resourceSchema) : {};
-	const additionalDefinitions = _.reduce(
+	const additionalDefinitions = _reduce(
 		additionalSchemas,
 		(acc, schema) => ({ ...acc, ...createSchemaDefinition(schema) }),
 		[]

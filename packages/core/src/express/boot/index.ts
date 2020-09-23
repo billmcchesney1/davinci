@@ -5,7 +5,7 @@
 
 import Debug from 'debug';
 import requireDir from 'require-dir';
-import _ from 'lodash';
+import _values from 'lodash/values';
 import path from 'path';
 import Promise from 'bluebird';
 import fsModule from 'fs';
@@ -50,7 +50,7 @@ export const execBootScripts = (app, options) => {
 	// found some valid scripts (ignore not functions)
 	const scripts = requireDir(bootDirPath);
 
-	const bootScripts = _.values(scripts).filter((s, i) => {
+	const bootScripts = _values(scripts).filter((s, i) => {
 		debug('Checking Scripts', i);
 		return typeof s === 'function' || typeof s.default === 'function';
 	});
