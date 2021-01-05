@@ -20,7 +20,7 @@
 	"dependencies": {
 		"@davinci/reflector": "^1.0.1",
 		"@godaddy/terminus": "4.1.0",
-		"ajv": "6.2.1",
+		"ajv": "6.12.3",
 		"bluebird": "3.5.0",
 		"debug": "^4.1.1",
 		"lodash": "4.17.19",
