@@ -28,7 +28,7 @@
 		"eslint": "6.6.0",
 		"eslint-config-airbnb-base": "14.0.0",
 		"eslint-config-prettier": "6.6.0",
-		"eslint-plugin-import": "2.18.2",
+		"eslint-plugin-import": "2.19.0",
 		"lerna": "^3.13.4",
 		"mocha": "5.2.0",
 		"mongoose": "5.7.5",
