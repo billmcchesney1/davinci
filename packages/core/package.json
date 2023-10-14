@@ -23,7 +23,7 @@
 		"ajv": "6.2.1",
 		"bluebird": "3.5.0",
 		"debug": "^4.1.1",
-		"lodash": "4.17.19",
+		"lodash": "4.17.21",
 		"openapi-types": "^7.0.1",
 		"require-dir": "0.3.2"
 	},
